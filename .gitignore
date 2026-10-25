@@ -1,0 +1,15 @@
+# Xmake cache
+.xmake/
+build/
+
+# IDE 配置
+.vscode/
+.idea/
+
+# 编译产物
+*.exe
+*.obj
+*.ilk
+*.pdb
+*.o
+*.out
