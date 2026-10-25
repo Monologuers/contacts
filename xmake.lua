@@ -3,6 +3,8 @@ add_rules("mode.debug", "mode.release")
 target("Contacts")
     set_kind("binary")
     add_files("src/*.c")
+    set_targetdir("build/bin")
+    set_objectdir("build/obj")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

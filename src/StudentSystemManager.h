@@ -16,3 +16,7 @@ typedef struct _Node
     struct _Node* next;
 
 }Node;
+
+void inputStudent(Node*head);
+
+void welcome();
