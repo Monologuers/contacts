@@ -21,15 +21,16 @@ while (1){
         printStudent(head);
         break;
         case '3':// 统计学生信息
-        countStudent(head):
+        countStudent(head);
         break;
         case '4':// 查找学生信息
+        findStudent(head);
         break;
         case '5': //修改学生信息
         break;
         case '6': //删除学生信息
         break;
-        case '7'://按成绩排序
+        case '7': //按成绩排序
         break;
         case '8'://退出系统
         break;

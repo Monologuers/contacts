@@ -5,6 +5,8 @@ build/
 # IDE 配置
 .vscode/
 .idea/
+/vsxmake*/
+/.vs/
 
 # 编译产物
 *.exe

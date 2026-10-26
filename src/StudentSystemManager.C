@@ -21,7 +21,7 @@ void inputStudent(Node*head) {
     Node* fresh  = malloc(sizeof(Node));
     fresh ->next =  NULL;
     printf("请输入学生学号，姓名，成绩");
-    scanf("%d%s%d",&fresh->student.stuNum, fresh->student.name,fresh->student.score);
+    scanf("%d%s%d", &fresh->student.stuNum, fresh->student.name, fresh->student.score);
 
     Node* move = head;
     while (move->next != NULL) {
@@ -40,7 +40,7 @@ void inputStudent(Node*head) {
 void printStudent(Node* head){
     Node*move = head->next;
     while(move != NULL){
-        printf("学号：%d姓名：%s 成绩：%d", move->student.stuNum, move->student.name, move->student.score);
+        printf("学号：%d姓名:%s 成绩：%d\n", move->student.stuNum, move->student.name, move->student.score);
         move = move->next;
     }
 
@@ -65,4 +65,30 @@ void countStudent(Node*head){
      // 清空控制台
      system("cls");
 
+}
+
+void findStudent(Node*head){
+    printf("要查找学生的学号：");
+    int stuNum;
+    scanf("%d",&stuNum);
+    Node* move = head ->next;
+    while (move != NULL){
+     if (stuNum == move->student.stuNum) {
+            printf("学号：%d 姓名：%s 成绩：%d\n", move->student.stuNum, move->student.name,move->student.score);
+               
+    //暂停程序
+     system("pause");
+     // 清空控制台
+     system("cls");
+
+     return;
+     
+     }
+     move = move ->next;
+    }
+    printf ("未找到学生信息\n");
+       //暂停程序
+     system("pause");
+     // 清空控制台
+     system("cls");
 }
