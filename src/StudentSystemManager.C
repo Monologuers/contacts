@@ -1,16 +1,4 @@
 #include "StudentSystemManager.h"
-void inputStudent(Node*head) {
-    Node* fresh  = malloc(sizeof(Node));
-    fresh ->next =  NULL;
-    printf("请输入学生学号，姓名，成绩");
-    scanf("%d%s%d",&fresh->student.stuNum, fresh->student.name,fresh->student.score);
-
-    Node* move = head;
-    while (move->next != NULL) {
-        move = move->next;
-    }
-}
-
 void welcome(){
     printf ("******************\n");
     printf ("*\t学生管理系统\t\n");
@@ -26,4 +14,25 @@ void welcome(){
     printf ("*\t7.按成绩排序\t*\n");
     printf ("*\t8.退出系统\t*\n");
     printf ("********************\n");
+}
+
+
+void inputStudent(Node*head) {
+    Node* fresh  = malloc(sizeof(Node));
+    fresh ->next =  NULL;
+    printf("请输入学生学号，姓名，成绩");
+    scanf("%d%s%d",&fresh->student.stuNum, fresh->student.name,fresh->student.score);
+
+    Node* move = head;
+    while (move->next != NULL) {
+        move = move->next;
+    }
+     //将学生插入尾部
+     move->next = fresh;
+
+     //暂停程序
+     system("pause");
+     // 清空控制台
+     system("cls");
+
 }
