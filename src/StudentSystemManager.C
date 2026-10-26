@@ -36,3 +36,18 @@ void inputStudent(Node*head) {
      system("cls");
 
 }
+
+void printStudent(Node* head){
+    Node*move = head->next;
+    while(move != NULL){
+        printf("学号：%d姓名：%s 成绩：%d", move->student.stuNum, move->student.name, move->student.score);
+        move = move->next;
+    }
+
+     //暂停程序
+     system("pause");
+     // 清空控制台
+     system("cls");
+    }
+
+

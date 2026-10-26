@@ -17,6 +17,9 @@ typedef struct _Node
 
 }Node;
 
+void welcome();
+
 void inputStudent(Node*head);
 
-void welcome();
+void printStudent(Node* head);
+

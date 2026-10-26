@@ -7,6 +7,8 @@ int main(){
     Node* head = malloc(sizeof(Node));
     head->next = NULL;
 
+while (1){
+
     welcome();
 
       char c = _getch();
@@ -16,6 +18,7 @@ int main(){
         inputStudent(head);
         break;
         case '2'://打印学生信息
+        printStudent(head);
         break;
         case '3':// 统计学生信息
         break;
@@ -31,6 +34,7 @@ int main(){
         break;
         default:
         break;
+      }
       }
     return 0;
 }
