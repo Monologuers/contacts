@@ -23,3 +23,5 @@ void inputStudent(Node*head);
 
 void printStudent(Node* head);
 
+void countStudent(Node*head);
+

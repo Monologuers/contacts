@@ -50,4 +50,19 @@ void printStudent(Node* head){
      system("cls");
     }
 
+void countStudent(Node*head){
+    int count = 0;
+    Node* move = head->next;
+    while(move !=NULL){
+        count++;
+        move = move->next;
+    
+    }
+    printf("学生的总人数：%d\n",count);
+    
+     //暂停程序
+     system("pause");
+     // 清空控制台
+     system("cls");
 
+}

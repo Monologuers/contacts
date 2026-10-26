@@ -21,6 +21,7 @@ while (1){
         printStudent(head);
         break;
         case '3':// 统计学生信息
+        countStudent(head):
         break;
         case '4':// 查找学生信息
         break;
