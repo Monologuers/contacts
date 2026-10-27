@@ -18,17 +18,25 @@ void welcome(){
 
 
 void inputStudent(Node*head) {
-    Node* fresh  = malloc(sizeof(Node));
-    fresh ->next =  NULL;
-    printf("请输入学生学号，姓名，成绩");
-    scanf("%d%s%d", &fresh->student.stuNum, fresh->student.name, fresh->student.score);
+    Node* fresh  = (Node *)malloc(sizeof(Node));
 
+    if (fresh == NULL) {
+        printf("内存分配失败！\n"); 
+        return; // 直接退出函数，避免后续解引用
+    }
+
+    fresh ->next =  NULL;
+    printf("请输入学生学号，姓名，成绩:\n");
+   (void)scanf("%d%19s%d", &fresh->student.stuNum, fresh->student.name, &fresh->student.score);
+   
     Node* move = head;
     while (move->next != NULL) {
         move = move->next;
     }
      //将学生插入尾部
      move->next = fresh;
+
+     saveStudent(head);
 
      //暂停程序
      system("pause");
@@ -70,7 +78,7 @@ void countStudent(Node*head){
 void findStudent(Node*head){
     printf("要查找学生的学号：");
     int stuNum;
-    scanf("%d",&stuNum);
+    (void)scanf("%d",&stuNum);
     Node* move = head ->next;
     while (move != NULL){
      if (stuNum == move->student.stuNum) {
@@ -92,3 +100,17 @@ void findStudent(Node*head){
      // 清空控制台
      system("cls");
 }
+
+void saveStudent(Node* head) {
+    FILE* file = fopen("./stu.info", "w");
+    Node* move = head->next;
+    while (move != NULL) {
+        if (fwrite(&move->student, sizeof(Student), 1, file) != 1) {
+            printf("写入失败\n");
+            return;
+        }
+        move = move->next;
+    }
+    fclose(file);
+}
+
