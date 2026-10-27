@@ -4,8 +4,9 @@
 
 int main(){
     //创建头结点
-    Node* head = malloc(sizeof(Node));
+    Node* head = (Node*)malloc(sizeof(Node));
     head->next = NULL;
+    loadStudent(head);
 
 while (1){
 
@@ -27,14 +28,22 @@ while (1){
         findStudent(head);
         break;
         case '5': //修改学生信息
+            modifyStudent(head);
         break;
         case '6': //删除学生信息
+            deleteStudent(head);
         break;
         case '7': //按成绩排序
+        sortStudent(head);
         break;
         case '8'://退出系统
+            system("cls");
+            printf("baibai!\n");
+            exit(0);
+
         break;
         default:
+            printf("请重新输入：\n");
         break;
       }
       }
